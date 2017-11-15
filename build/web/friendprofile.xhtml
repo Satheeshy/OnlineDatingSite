@@ -1,0 +1,115 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+        <style>
+
+
+            body{
+                margin-left: 40px;
+                margin-right: 40px;
+                margin-top: 15px;
+                background-image: url("images/a.jpg"); 
+                -moz-background-size: cover;
+                -webkit-background-size: cover;
+                background-size: cover;
+                background-position: top center !important;
+                background-repeat: no-repeat !important;
+                background-attachment: fixed;
+
+            }
+        </style>
+    </h:head>
+
+    <h:body>
+        <ui:insert>
+            <ui:include src="/Top.xhtml"/>
+        </ui:insert>
+
+       
+            <h:panelGrid columns="2" cellpadding="4px" cellspacing="4px" 
+                         style="font-family: cursive;margin-top: 20px;font-size: 24px;margin-left: 20px">
+                <f:facet name ="header" >Personal Details</f:facet>
+                <h:outputText value="First name" />
+                <h:outputText value="#{login.friend_id.ufirstname}" />
+                <h:outputText value="Last name" />
+                <h:outputText value="#{login.friend_id.ulastname}" />
+                <h:outputText value="Username" />
+                <h:outputText value="#{login.friend_id.userid}" />
+
+                <h:outputText value="Gender" />
+                <h:outputText value="#{login.friend_id.ugender}" />
+                <h:outputText value="Age" />
+                <h:outputText value="#{login.friend_id.uage}" />
+                <h:outputText value="Date Of Birth" />
+                <h:outputText value="#{login.friend_id.udob}" />
+
+            </h:panelGrid>
+       
+
+        <div style="font-family: cursive;margin-top: 20px;font-size: 24px;margin-left: 20px;
+              position: absolute;
+    top: 80px;
+    right: 0;
+    width: 50%;
+    height: 100px;">
+            <h:form>
+                <h:outputLabel value="Do You Like To Send Friend Request" rendered="#{not login.isFriend}"/>
+                <h:outputLabel value="Do You Like To Cancel Friend Request" rendered="#{login.isFriend}"/><br /><br />
+                <h:commandButton style="font-family: cursive;font-size: 24px;align-content: center;margin-left: 70px" value="Send Friend Request" action="#{login.sendFriendRequest()}" rendered="#{not login.isFriend}"/>
+                <h:commandButton style="font-family: cursive;font-size: 24px;margin-left: 70px;align-content: center" value="Cancel Friend Request" action="#{login.cancelFriendRequest()}" rendered="#{login.isFriend}"/>
+
+            </h:form>
+        </div>
+        <div style="float: left;margin-left: 300px">
+
+            <h:panelGrid columns="2" cellpadding="4px" cellspacing="4px" 
+                         style="font-family: cursive;margin-top: 20px;font-size: 24px;margin-left: 20px">
+                <f:facet name ="header" >Preferences</f:facet>
+                <h:outputText value="Ethnicity" />
+                <h:outputText value="#{login.friend_id.uethnicity}" />
+                <h:outputText value="Religion" />
+                <h:outputText value="#{login.friend_id.ureligion}" />
+                <h:outputText value="Relationship Status" />
+                <h:outputText value="#{login.friend_id.urelationshipstatus}" />
+                <h:outputText value="Education" />
+                <h:outputText value="#{login.friend_id.ueducation}" />
+                <h:outputText value="Occupation" />
+                <h:outputText value="#{login.friend_id.uoccupation}" />
+                <h:outputText value="Income" />
+                <h:outputText value="#{login.friend_id.uincome}" />
+                <h:outputText value="Interest" />
+                <h:panelGroup layout="block">
+                    <h:outputText value="#{login.friend_id.uinterest01}" /><br />
+                    <h:outputText value="#{login.friend_id.uinterest02}" /><br />
+                    <h:outputText value="#{login.friend_id.uinterest03}" /><br />
+                </h:panelGroup>
+
+
+            </h:panelGrid>
+
+        </div>
+        <div style="float: right;margin-right: 100px">
+            <h:panelGrid columns="2" cellpadding="4px" cellspacing="4px" 
+                         style="font-family: cursive;margin-top: 20px;font-size: 24px;margin-left: 20px">
+                <f:facet name ="header" >Match Preferences:</f:facet>
+                <h:outputText value="Age" />
+                <h:outputText value="#{login.friend_id.mage}" />
+                <h:outputText value="Language" />
+                <h:outputText value="#{login.friend_id.mlanguage}" />
+                <h:outputText value="Relationship Status" />
+                <h:outputText value="#{login.friend_id.mrelationshipstatus}" />
+                <h:outputText value="Religion" />
+                <h:outputText value="#{login.friend_id.mreligion}" />
+                <h:outputText value="Education" />
+                <h:outputText value="#{login.friend_id.meducation}" />
+                <h:outputText value="Occupation" />
+                <h:outputText value="#{login.friend_id.moccupation}" />
+            </h:panelGrid>
+        </div>
+    </h:body>
+</html>

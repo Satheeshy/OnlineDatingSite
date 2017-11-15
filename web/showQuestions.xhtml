@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        
+        <h:form>
+            <h:panelGrid >
+                
+                
+                
+                       </h:panelGrid>
+             <h:panelGrid cellpadding="6px" cellspacing="6px" columns="2" style="align-content: center;font-size: 24px;font: cursive;margin-left: 700px;margin-top: 100px">
+                <f:facet name="header"><h:outputLabel value="Enter your Answers to Reset Password"/></f:facet>
+               <h:outputText value ="#{forgotPasswordDetails.u.usecurityq01}" /> 
+               <h:inputText id="securityq01" value="#{forgotPasswordDetails.uanswer01}"/> 
+                        <h:outputText value="#{forgotPasswordDetails.u.usecurityq02}" />
+                        <h:inputText id="securityq02" value="#{forgotPasswordDetails.uanswer02}" /> 
+               
+                <f:facet name="footer">   <h:commandButton value="CheckAnswers" action="#{forgotPasswordDetails.validate(forgotPasswordDetails.u.userid)}"></h:commandButton>
+           
+                </f:facet>
+            </h:panelGrid>
+        </h:form>
+    </h:body>
+</html>
+

@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title></title>
+        <style>
+
+
+            .block {
+                overflow: hidden;
+                background-color: #333;
+                font-family: Arial;
+            }
+
+            .a{
+                float: left;
+                font-size: 18px;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+                font-style: italic;
+            }
+            .b{
+                float:right;
+                font-size: 18px;
+                color:white;
+                text-align: center;
+                padding: 14px 16px;
+                font-style: italic;
+                text-decoration: none;
+            }
+
+            .a:hover,.b:hover{
+                background-color: red;
+            }
+
+
+        </style>
+    </h:head>
+    <h:body>
+        <div>
+
+            <div  class="block">
+                <h:link styleClass="a"  outcome="home.xhtml" value="Home"/> 
+                <h:link styleClass="a"  outcome="SearchDisplay" value="Search"/> 
+                <h:link styleClass="a" outcome="chatbox.xhtml" value="Messages"/> 
+                <h:link styleClass="a" outcome="myfriends.xhtml" value="Connections"/> 
+               <h:link styleClass="b"  outcome="userprofile.xhtml" value="UserProfile"/> 
+                <h:link styleClass="b" outcome="settings.xhtml" value="Settings"/>
+                <h:link styleClass="b" outcome="index.xhtml" value="Log Out"/>
+            </div>
+           
+        </div> 
+    </h:body>
+</html>
+

@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Friends</title>
+        <style>
+            
+            
+            body{
+               background-image: url("images/a.jpg"); 
+               -moz-background-size: cover;
+               -webkit-background-size: cover;
+               background-size: cover;
+               background-position: top center !important;
+               background-repeat: no-repeat !important;
+               background-attachment: fixed;
+            }
+            div.one {
+  width: 200px;
+  float: left;
+}
+
+div.two {
+  margin-left: 60px;
+}
+        </style>
+    </h:head>
+    
+    <h:body>
+         <ui:insert>
+            <ui:include src="/Top.xhtml"/>
+        </ui:insert>
+        
+        <br />
+        <br />
+        <div style="padding-left: 50px;padding-right: 50px">
+            <ui:insert>
+            <ui:include src="/friendsheader.xhtml"/>
+        </ui:insert>
+       
+        </div>
+         
+        
+    </h:body>
+</html>
+

@@ -1,0 +1,106 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Messages</title>
+        <style>
+            body{
+               background-image: url("images/a.jpg"); 
+               -moz-background-size: cover;
+               -webkit-background-size: cover;
+               background-size: cover;
+               background-position: top center !important;
+               background-repeat: no-repeat !important;
+               background-attachment: fixed;
+            }
+           .button {
+   border-top: 1px solid #96d1f8;
+   background: #d66565;
+   background: -webkit-gradient(linear, left top, left bottom, from(#9c3e3e), to(#d66565));
+   background: -webkit-linear-gradient(top, #9c3e3e, #d66565);
+   background: -moz-linear-gradient(top, #9c3e3e, #d66565);
+   background: -ms-linear-gradient(top, #9c3e3e, #d66565);
+   background: -o-linear-gradient(top, #9c3e3e, #d66565);
+   padding: 12px 24px;
+   -webkit-border-radius: 7px;
+   -moz-border-radius: 7px;
+   border-radius: 7px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: white;
+   font-size: 16px;
+   font-family: Georgia, Serif;
+   text-decoration: none;
+   vertical-align: middle;
+   }
+.button:hover {
+   border-top-color: #28597a;
+   background: #28597a;
+   color: #ccc;
+   }
+.button:active {
+   border-top-color: #1b435e;
+   background: #1b435e;
+   }
+
+.block1 {
+    
+    overflow: hidden;
+    background-color:#333;
+    font-family: Arial;
+    width:200px;
+    height:auto;
+}
+
+.c{
+    float:bottom;
+    font-size: 18px;
+    color: white;
+    text-align: center;
+    padding: 13px 16px;
+    text-decoration: none;
+    font-style: italic;
+}
+
+
+.c:hover{
+    background-color: red;
+}
+
+        </style>
+    </h:head>
+    <h:body>
+         <ui:insert>
+            <ui:include src="/Top.xhtml"/>
+        </ui:insert>
+    <h2 align="center" >Welcome to Messages</h2>
+   
+    
+    <div id="two" style="width: 100%">
+        <h:form>
+            
+            <h2 style="color: white;"> <h:outputText style="background-color: blue"  value=" &nbsp; &nbsp; Welcome To ChatBox With: #{login.friend_name}"/> </h2>
+             
+            <h:dataTable  cellpadding="6px" style="width: 100%;font-size: 26px;margin-left: 30px;text-align: center" cellspacing="4px" value="#{login.messages}" var="e">
+                 
+                <h:column>
+                    #{e.receiver}:
+                </h:column>
+                <h:column>
+                    #{e.content}
+                </h:column>
+                <h:column >
+                  #{e.dateandtime}
+                </h:column>
+            </h:dataTable>
+            
+            <h:inputTextarea style="height: 60px; width: 100%;" value="#{login.typedMsg}"/><br></br>
+            <h:commandButton styleClass="button"  value="send" action="#{login.sendMesssage()}"/>
+            </h:form>
+         </div>   
+    </h:body>
+</html>

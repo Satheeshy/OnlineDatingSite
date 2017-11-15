@@ -1,0 +1,105 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Search display</title>
+        
+        <style>
+             body{
+               background-image: url("images/a.jpg"); 
+               -moz-background-size: cover;
+               -webkit-background-size: cover;
+               background-size: cover;
+               background-position: top center !important;
+               background-repeat: no-repeat !important;
+               background-attachment: fixed;
+            }
+       .button {
+   border-top: 1px solid #96d1f8;
+   background: #d66565;
+   background: -webkit-gradient(linear, left top, left bottom, from(#9c3e3e), to(#d66565));
+   background: -webkit-linear-gradient(top, #9c3e3e, #d66565);
+   background: -moz-linear-gradient(top, #9c3e3e, #d66565);
+   background: -ms-linear-gradient(top, #9c3e3e, #d66565);
+   background: -o-linear-gradient(top, #9c3e3e, #d66565);
+   padding: 12px 24px;
+   -webkit-border-radius: 7px;
+   -moz-border-radius: 7px;
+   border-radius: 7px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: white;
+   font-size: 16px;
+   font-family: Georgia, Serif;
+   text-decoration: none;
+   vertical-align: middle;
+   }
+.button:hover {
+   border-top-color: #28597a;
+   background: #28597a;
+   color: #ccc;
+   }
+.button:active {
+   border-top-color: #1b435e;
+   background: #1b435e;
+   }
+        </style>
+    </h:head>
+    <h:body>
+         <ui:insert>
+            <ui:include src="/Top.xhtml"/>
+        </ui:insert>
+        <h:form>
+           
+            <h:selectOneRadio style="font-size: 24px;font-family: cursive;font-style: italic;color: black;"  value = "#{login.searchName}" layout="pageDirection" >
+                <f:selectItem itemValue="Discover" itemLabel="Search By Any of your preferences"></f:selectItem> <br />         
+                <f:selectItem itemValue="Mutual" itemLabel="Search Mutual preferences"></f:selectItem>       <br />      
+                <f:selectItem itemValue="Reverse" itemLabel="Search by Reverse preferences"></f:selectItem>   <br />          
+                <f:selectItem itemValue="views" itemLabel="Search by Likes/Views"></f:selectItem>     
+            </h:selectOneRadio><br />
+            
+            <h:commandButton value="Match Based On Your Input" style="width: auto;margin-left: 30px;height: 30px"  action="#{login.enable()}" ></h:commandButton>
+          
+        </h:form>
+        <br />  <br />  
+            <h:form>
+             
+                <h:dataTable value="#{login.friends}" var="u" 
+                             style="table-layout:auto;width:100%;
+                             text-align: center;font-size: 24px;font-family: cursive;font-style: italic;" cellpadding="20px" cellspacing="10px" rendered="#{login.show}">
+                    <h:column >    				
+                         <f:facet name = "header">Name</f:facet>  
+                         
+                         <h:commandButton styleClass="button" value="#{u.friend.userid}"  action="#{login.ret(u.friend.userid)}"/> 
+                      
+                      </h:column>
+
+                      <h:column>
+                         <f:facet name = "header">Age</f:facet>
+                         #{u.friend.uage}
+                      </h:column>
+
+                      <h:column>
+                         <f:facet name = "header">Location</f:facet>
+                         #{u.friend.ucity}
+                      </h:column>
+                        <h:column>
+                         <f:facet name = "header">Relationship Status</f:facet>
+                         #{u.friend.mrelationshipstatus}
+                          </h:column>
+                      <h:column>
+                         <f:facet name = "header">Interest In AgePeople</f:facet>
+                         #{u.friend.mage}
+                          </h:column>
+             </h:dataTable>
+        </h:form>
+        
+        
+    </h:body>
+</html>
+

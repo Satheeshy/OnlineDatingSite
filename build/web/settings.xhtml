@@ -1,0 +1,197 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+        <style>
+            body{
+                background-image: url("images/a.jpg"); 
+                 background-size: cover;
+                background-position: top center !important;
+                background-repeat: no-repeat !important;
+                background-attachment: fixed;
+            }
+            </style>
+    </h:head>
+    <h:body>
+        <ui:insert>
+            <ui:include src="/Top.xhtml"/>
+        </ui:insert>
+        
+      
+        
+        
+        
+        <h:form>
+             <h:panelGrid columns="2" cellpadding="4px" cellspacing="4px" 
+                         style="font-family: cursive;margin-top: 20px;font-size: 24px;margin-left: 20px">
+                <f:facet name ="header" >Personal Details</f:facet>
+              <h:outputText value="First name" />
+                <h:panelGroup >
+                    <h:outputText value="#{login.loginId.ufirstname}"  rendered="#{login.edit}"/>
+                    <h:inputText value ="#{login.loginId.ufirstname}" rendered="#{not login.edit}"/>
+                </h:panelGroup>
+               
+                <h:outputText value="Last name" />
+                <h:panelGroup>
+                    <h:outputText value="#{login.loginId.ulastname}" rendered="#{login.edit}"/>
+                    <h:inputText value="#{login.loginId.ulastname}" rendered="#{not login.edit}"/>
+                </h:panelGroup>
+                
+                 <h:outputText value="Password" />
+                <h:panelGroup>
+                    <h:outputText value="#{login.loginId.upassword}" rendered="#{login.edit}"/>
+                    <h:inputText value="#{login.loginId.upassword}" rendered="#{not login.edit}"/>
+                </h:panelGroup>
+                
+                <h:outputText value="Gender" />
+                <h:panelGroup>
+                    <h:outputText value="#{login.loginId.ugender}" rendered="#{login.edit}"/>
+                    <h:inputText value="#{login.loginId.ugender}" rendered="#{not login.edit}"/>
+                </h:panelGroup>
+                 <h:outputText value="Relationship Status" />
+                <h:panelGroup>
+                    <h:outputText value="#{login.loginId.urelationshipstatus}" rendered="#{login.edit}"/>
+                    <h:inputText value="#{login.loginId.urelationshipstatus}"  rendered="#{not login.edit}"/>
+                </h:panelGroup>
+                
+              
+
+            </h:panelGrid>
+       
+
+        <div style="font-family: cursive;margin-top: 20px;font-size: 24px;margin-left: 20px;
+              position: absolute;
+    top: 80px;
+    right: 0;
+    width: 50%;
+    height: 100px;">
+            
+                <h:outputLabel value="Edit Your Profile" rendered="#{login.edit}"/>
+                <h:outputLabel value="Save Profile" rendered="#{not login.edit}"/>
+                <h:commandButton style="font-family: cursive;font-size: 24px;align-content: center;margin-left: 70px" value="Edit" action="#{login.setEdit(false)}" rendered="#{login.edit}"/>
+                <h:commandButton style="font-family: cursive;font-size: 24px;margin-left: 70px;align-content: center" value="Save" action="#{login.updateUserProfile()}" rendered="#{not login.edit}"/>
+
+                
+                
+                
+                
+           
+        </div>
+        <div style="float: left;margin-left: 300px">
+
+            <h:panelGrid columns="2" cellpadding="4px" cellspacing="4px" 
+                         style="font-family: cursive;margin-top: 20px;font-size: 24px;margin-left: 20px">
+                <f:facet name ="header" >Preferences</f:facet>
+         
+                 <h:outputText value="Ethnicity" />
+                <h:panelGroup>
+                    <h:outputText value="#{login.loginId.uethnicity}" rendered="#{login.edit}"/>
+                    <h:inputText value="#{login.loginId.uethnicity}" rendered="#{not login.edit}"/>
+                </h:panelGroup>
+                
+                <h:outputText value="Religion" />
+                <h:panelGroup>
+                    <h:outputText value="#{login.loginId.ureligion}"  rendered="#{login.edit}"/>
+                    <h:inputText value="#{login.loginId.ureligion}"  rendered="#{not login.edit}"/>
+                </h:panelGroup>
+                
+                 <h:outputText value="Education" />
+                <h:panelGroup>
+                    <h:outputText value="#{login.loginId.ueducation}" rendered="#{login.edit}"/>
+                    <h:inputText value="#{login.loginId.ueducation}"  rendered="#{not login.edit}"/>
+                </h:panelGroup>
+                
+                <h:outputText value="Occupation" />
+                 <h:panelGroup>
+                    <h:outputText value="#{login.loginId.uoccupation}"  rendered="#{login.edit}"/>
+                    <h:inputText value="#{login.loginId.uoccupation}"   rendered="#{not login.edit}"/>
+                </h:panelGroup>
+               
+                <h:outputText value="Income" />
+                <h:panelGroup>
+                    <h:outputText value="#{login.loginId.uincome}"  rendered="#{login.edit}"/>
+                    <h:inputText value="#{login.loginId.uincome}"   rendered="#{not login.edit}"/>
+                </h:panelGroup>
+                
+                <h:outputText value="Interest" />
+                
+                <h:panelGroup>
+                   
+                    <h:panelGroup layout="block">
+                        <h:outputText value="#{login.loginId.uinterest01}" rendered="#{login.edit}"/>
+                        <h:outputText value="#{login.loginId.uinterest02}" rendered="#{login.edit}"/>
+                        <h:outputText value="#{login.loginId.uinterest03}" rendered="#{login.edit}"/>
+                    
+                        <h:inputText value="#{login.loginId.uinterest01}" rendered="#{not login.edit}"/>
+                        <h:inputText value="#{login.loginId.uinterest02}" rendered="#{not login.edit}"/>
+                        <h:inputText value="#{login.loginId.uinterest03}" rendered="#{not login.edit}"/>
+                    </h:panelGroup>
+                </h:panelGroup>
+
+            </h:panelGrid>
+
+        </div>
+        <div style="float: right;margin-right: 100px">
+            <h:panelGrid columns="2" cellpadding="4px" cellspacing="4px" 
+                         style="font-family: cursive;margin-top: 20px;font-size: 24px;margin-left: 20px">
+                <f:facet name ="header" >Match Preferences:</f:facet>
+                 <h:outputText value="Match Preferences Age" />
+                
+                 <h:panelGroup>
+                    <h:outputText value="#{login.loginId.mage}"  rendered="#{login.edit}"/>
+                    <h:inputText value="#{login.loginId.mage}"   rendered="#{not login.edit}"/>
+                </h:panelGroup>
+                
+              
+               
+                <h:outputText value="Seeking" />
+                <h:panelGroup>
+                    <h:outputText value="#{login.loginId.useeking}"   rendered="#{login.edit}"/>
+                    <h:inputText value="#{login.loginId.useeking}"    rendered="#{not login.edit}"/>
+                </h:panelGroup>
+                
+                <h:outputText value="Language" />
+                <h:panelGroup>
+                    <h:outputText value="#{login.loginId.mlanguage}"   rendered="#{login.edit}"/>
+                    <h:inputText value="#{login.loginId.mlanguage}"    rendered="#{not login.edit}"/>
+                </h:panelGroup>
+                
+                <h:outputText value="Relationship Status" />
+                <h:panelGroup>
+                    <h:outputText value="#{login.loginId.mrelationshipstatus}"   rendered="#{login.edit}"/>
+                    <h:inputText value="#{login.loginId.mrelationshipstatus}"    rendered="#{not login.edit}"/>
+                </h:panelGroup>
+                
+                
+                <h:outputText value="Religion" />
+                <h:panelGroup>
+                    <h:outputText value="#{login.loginId.mreligion}"   rendered="#{login.edit}"/>
+                    <h:inputText value="#{login.loginId.mreligion}"    rendered="#{not login.edit}"/>
+                </h:panelGroup>
+                
+                
+                <h:outputText value="Education" />
+                <h:panelGroup>
+                    <h:outputText value="#{login.loginId.meducation}"   rendered="#{login.edit}"/>
+                    <h:inputText value="#{login.loginId.meducation}"    rendered="#{not login.edit}"/>
+                </h:panelGroup>
+                
+                <h:outputText value="Occupation" />
+                <h:panelGroup>
+                    <h:outputText value="#{login.loginId.moccupation}"   rendered="#{login.edit}"/>
+                    <h:inputText value="#{login.loginId.moccupation}"    rendered="#{not login.edit}"/>
+                </h:panelGroup>
+                
+                
+          
+            </h:panelGrid>
+        </div>
+</h:form>
+    </h:body>
+    
+    
+</html>

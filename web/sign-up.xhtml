@@ -1,0 +1,116 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title></title>
+         <style>
+            body{
+               background-image: url("images/a.jpg"); 
+               -moz-background-size: cover;
+               -webkit-background-size: cover;
+               background-size: cover;
+               background-position: top center !important;
+               background-repeat: no-repeat !important;
+               background-attachment: fixed;
+            }
+            
+        </style>
+    </h:head>
+    <h:body>
+        <div style="font-size: 24px;">
+     <h:form>
+         <h:panelGrid columns="3" cellpadding="10px" cellspacing="10px" >
+             <f:facet name="header">Welcome To Online Dating Site</f:facet>
+             First Name:<h:inputText id="firstname" title="please enter your last name" value="#{register.ufirstname}" required="true" requiredMessage="please enter a valid last name"></h:inputText>
+                 <h:message for="firstname" style="color: red"/>
+             Last Name:<h:inputText id="lastname" title="please enter your first name" value="#{register.ulastname}" required="true" requiredMessage="please enter a valid first name">
+                </h:inputText> <h:message for="lastname" style="color: red"/>
+             E-mail id:<h:inputText id="email" title="please enter your email" value="#{register.uemailid}" required="true" requiredMessage="please enter a valid email"> 
+                </h:inputText>  <h:message for="email" style="color: red"/>
+             User Name:<h:inputText id="userid" title="please enter your user name" value="#{register.userid}" required="true" requiredMessage="please enter a valid user name">
+                </h:inputText> <h:message for="userid" style="color: red"/>
+                Password:<h:inputSecret id="password" title="please enter your password" value="#{register.upassword}" required="true" requiredMessage="please enter a valid password"> 
+                  </h:inputSecret> <h:message for="password" style="color: red"/>        
+             Your Gender:<h:selectOneListbox id="gender" value="#{register.ugender}">
+                     <f:selectItem itemValue="male"/>
+                     <f:selectItem itemValue="female"/>
+                    </h:selectOneListbox>
+             <h:message for="gender"/>
+             Seeking:<h:selectOneListbox id="seeking" value="#{register.useeking}">
+                     <f:selectItem itemValue="male"/>
+                     <f:selectItem itemValue="female"/>
+                    </h:selectOneListbox>
+             <h:message for="seeking"/>
+             Your RelationShip Status:<h:inputText id="relationship" title="please enter your relationship status" value="#{register.urelationshipstatus}" required="true" requiredMessage="please enter a valid relationship status">
+             </h:inputText>  <h:message for="relationship" style="color: red"/>
+                    
+             Your Age:<h:inputText id="age" title="please enter your age" value="#{register.uage}" required="true" requiredMessage="please enter a valid age">
+                 <f:validateLongRange minimum="10" maximum="70"/>
+                 </h:inputText>  
+                   <h:message for="age" style="color: red"/>
+                    
+             Your City:<h:inputText id="city" title="please enter your city" value="#{register.ucity}" required="true" requiredMessage="please enter a valid city">
+              </h:inputText>  <h:message for="city" style="color: red"/>       
+             Your Zipcode:<h:inputText id="zipcode" title="please enter your zipcode" value="#{register.uzipcode}" required="true" requiredMessage="please enter a valid zipcode">
+            </h:inputText>   <h:message for="zipcode" style="color: red"/>        
+             Your DOB:<h:inputText id="dob" title="please enter your dob" value="#{register.udob}" required="true" requiredMessage="please enter a valid dob">
+              </h:inputText>  <h:message for="dob" style="color: red"/>
+                    
+             Your Ethnicity:<h:inputText id="ethnicity" title="please enter your ethnicity" value="#{register.uethnicity}" required="true" requiredMessage="please enter a valid ethnicity"> </h:inputText><h:message for="ethnicity" style="color: red"/>         
+             Your Religion:<h:inputText id="religion" title="please enter your religion" value="#{register.ureligion}" required="true" requiredMessage="please enter a valid religion"></h:inputText> <h:message for="religion" style="color: red"/>        
+             Your Language:<h:inputText id="language" title="please enter your language" value="#{register.ulanguage}" required="true" requiredMessage="please enter a valid language"></h:inputText>   <h:message for="language" style="color: red"/>      
+             YOur Education:<h:inputText id="education" title="please enter your education" value="#{register.ueducation}" required="true" requiredMessage="please enter a valid education"></h:inputText> <h:message for="education" style="color: red"/>        
+             Your Occupation:<h:inputText id="occupation" title="please enter your password" value="#{register.uoccupation}" required="true" requiredMessage="please enter a valid occupation"></h:inputText>  <h:message for="occupation" style="color: red"/>       
+             Your Income:<h:inputText id="income" title="please enter your income" value="#{register.uincome}" required="true" requiredMessage="please enter a valid income">
+              </h:inputText> <h:message for="income" style="color: red"/>
+                    
+             Your Type(like Intelligent,Smart,Naughty):<h:inputText id="type" title="please enter your type" value="#{register.utype}" required="true" requiredMessage="please enter a valid type">
+              </h:inputText>   <h:message for="type" style="color: red"/>
+             
+                  
+            Your Interests:<br></br>
+            1.<h:inputText id="interest01" title="please enter your interest" value="#{register.uinterest01}" required="true" requiredMessage="please enter a valid interest">
+            </h:inputText>  <h:message for="interest01" style="color: red"/>       
+            2.<h:inputText id="interest02" title="please enter your interest" value="#{register.uinterest02}" required="true" requiredMessage="please enter a valid interest">
+           </h:inputText>  <h:message for="interest02" style="color: red"/>        
+            3.<h:inputText id="interest03" title="please enter your interest" value="#{register.uinterest03}" required="true" requiredMessage="please enter a valid interest">
+            </h:inputText><h:message for="interest03" style="color: red"/>         
+            Describer yourself in 100 words:
+            <h:inputTextarea id="desc" title="please describe yourself" value="#{register.uinterest01}" required="true" requiredMessage="please enter a data">
+            </h:inputTextarea><h:message for="desc" style="color: red"/>
+            
+            Security Question 01:<h:inputText id="securityq01" title="please enter your security question" value="#{register.usecurityq01}" required="true" requiredMessage="please enter a valid security question">
+            </h:inputText> <h:message for="securityq01" style="color: red"/>        
+            Answer 01: <h:inputText id="answer01" title="please enter your answer" value="#{register.uanswer01}" required="true" requiredMessage="please enter a valid answer">
+            </h:inputText> <h:message for="answer01" style="color: red"/>        
+            Security Question 02:<h:inputText id="securityq02" title="please enter your security question" value="#{register.usecurityq02}" required="true" requiredMessage="please enter a valid security question">
+            </h:inputText> <h:message for="securityq02" style="color: red"/>        
+            Answer 02: <h:inputText id="answer02" title="please enter your interest" value="#{register.uanswer02}" required="true" requiredMessage="please enter a valid answer">
+            </h:inputText>   <h:message for="answer02" style="color: red"/>       
+            
+            Preferences:<br/>
+            Preference Age:<h:inputText id="mage" title="please enter your preference age" value="#{register.mage}" required="true" requiredMessage="please enter a age">
+            </h:inputText> <h:message for="mage" style="color: red"/>        
+            Preference City:<h:inputText id="mcity" title="please enter your preference city" value="#{register.mcity}" required="true" requiredMessage="please enter a valid city">
+            </h:inputText><h:message for="mcity" style="color: red"/>        
+            Preference Relationship status:<h:inputText id="mrelationship" title="please enter your preference relationship status" value="#{register.mrelationshipstatus}" required="true" requiredMessage="please enter a valid relationship status">
+            </h:inputText> <h:message for="mrelationship" style="color: red"/>        
+            Preference Religion:<h:inputText id="mreligion" title="please enter your preference religion" value="#{register.mreligion}" required="true" requiredMessage="please enter a valid religion">
+            </h:inputText><h:message for="mreligion" style="color: red"/>         
+            Preference Language:<h:inputText id="mlanguage" title="please enter your preference language" value="#{register.mlanguage}" required="true" requiredMessage="please enter a valid language">
+            </h:inputText>   <h:message for="mlanguage" style="color: red"/>      
+            Preference Education:<h:inputText id="meducation" title="please enter your preference education" value="#{register.meducation}" required="true" requiredMessage="please enter a valid education">
+            </h:inputText><h:message for="meducation" style="color: red"/>         
+            Preference Occupation:<h:inputText id="moccupation" title="please enter your preference occupation" value="#{register.moccupation}" required="true" requiredMessage="please enter a valid occupation">
+            </h:inputText>  <h:message for="moccupation" style="color: red"/>       
+            Preference Ethnicity:<h:inputText id="methnicity" title="please enter your preference ethnicity" value="#{register.methnicity}" required="true" requiredMessage="please enter a valid ethnicity">
+            </h:inputText>  <h:message for="methnicity" style="color: red"/>       
+            <f:facet name="footer"><h:commandButton style="align-content: center;font-size: 24px;size:20px" value="submit" action="#{register.add()}"/></f:facet>
+         </h:panelGrid>
+            </h:form>
+            </div>
+    </h:body>
+</html>
+
